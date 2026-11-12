@@ -1,0 +1,35 @@
+{
+  "name": "us-stock-sim",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server/dev.mjs",
+    "dev:server": "node server/index.mjs",
+    "dev:client": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "tsc -b && vite build",
+    "start": "node server/index.mjs --production",
+    "lint": "oxlint",
+    "test": "node --experimental-strip-types scripts/test-account.ts && node --experimental-strip-types scripts/test-market.ts",
+    "test:browser": "node scripts/test-browser.mjs",
+    "test:alpaca": "node scripts/test-alpaca.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.4",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "tailwindcss": "^4.3.4",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6"
+  }
+}
