@@ -131,11 +131,12 @@ alpacaService.startStream(
   (status) => hub.broadcast({ type: 'status', status, source: alpacaService.getSourceInfo() }),
 )
 
-server.listen(config.port, '127.0.0.1', () => {
+server.listen(config.port, config.host, () => {
   const safeStatus = {
     configured: alpacaService.configured,
     provider: 'Alpaca',
     feed: 'IEX',
+    host: config.host,
     port: config.port,
   }
   console.log('[market-service]', JSON.stringify(safeStatus))
